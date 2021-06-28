@@ -1,16 +1,16 @@
-:root{
-  --primary: #5ECE7B;
+:root {
+  --primary: #5ece7b;
 }
 body {
   margin: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 2rem 6rem;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 .header {
@@ -23,16 +23,16 @@ code {
   justify-content: center;
 }
 .nav-element:first-child {
-  justify-content: unset; 
+  justify-content: unset;
   align-items: center;
 }
-.nav-element:first-child > span { 
-  margin-right: 3rem; 
-  margin-bottom: 0.3rem; 
+.nav-element:first-child > span {
+  margin-right: 3rem;
+  margin-bottom: 0.3rem;
 }
 
-.nav-element:last-child  > div { 
-  margin-left: auto;     
+.nav-element:last-child > div {
+  margin-left: auto;
   width: 4rem;
   justify-content: space-between;
 }
@@ -40,23 +40,23 @@ code {
   text-transform: uppercase;
   text-align: center;
 }
-.active{
+.active {
   color: var(--primary);
   margin-bottom: unset !important;
 }
-.active::after{
+.active::after {
   content: "";
   display: block;
   width: 6em;
   border-bottom: 0.3em solid var(--primary);
   transform: translateY(2rem);
 }
-.actions{
+.actions {
   display: flex;
   align-items: center;
   font-size: 1.2rem;
 }
-.cart-logo{
+.cart-logo {
   height: 1.2rem;
 }
 .arrow {
@@ -93,4 +93,6 @@ code {
   flex-direction: column;
   justify-content: space-around;
 }
-
+.currency-item {
+  cursor: pointer;
+}

@@ -1,6 +1,6 @@
-export const getCurrencySymbol = (locale, currency) =>
+export const getCurrencySymbol = (currency) =>
   (0)
-    .toLocaleString(locale, {
+    .toLocaleString("RU-ru", {
       style: "currency",
       currency,
       minimumFractionDigits: 0,
