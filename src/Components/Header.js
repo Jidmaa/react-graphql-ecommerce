@@ -1,12 +1,16 @@
 import React from "react";
 import logo from "../logo.svg";
 import cart from "../cart.svg";
+import { graphql } from "@apollo/client/react/hoc";
+import { CATEGORIES_CURRENCIES } from "../API/queries";
+import { getCurrencySymbol } from "../Functions/util";
 class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = { currencies: false };
   }
   render() {
+    console.log(this.props);
     return (
       <div className="header">
         <div className="nav-element">
@@ -37,11 +41,14 @@ class Header extends React.Component {
                   }
                 ></span>
               </div>
-              {this.state.currencies == true && (
+              {this.state.currencies == true && !this.props.data.loading && (
                 <ul className="currencies-list">
-                  <li> € EUR </li>
-                  <li> $ USD</li>
-                  <li> Y YEN</li>
+                  {this.props.data.currencies.map((currency) => (
+                    <li>
+                      {" "}
+                      {getCurrencySymbol("RU-ru", currency)} {currency}
+                    </li>
+                  ))}
                 </ul>
               )}
             </div>
@@ -53,4 +60,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default graphql(CATEGORIES_CURRENCIES)(Header);
