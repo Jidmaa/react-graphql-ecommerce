@@ -8,7 +8,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 2rem 6rem;
 }
-
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90vh;
+  grid-gap: 4rem;
+}
+.loader {
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -95,4 +107,7 @@ code {
 }
 .currency-item {
   cursor: pointer;
+}
+.product-listing {
+  height: -webkit-fill-available;
 }
