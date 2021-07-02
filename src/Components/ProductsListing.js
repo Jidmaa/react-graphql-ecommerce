@@ -1,13 +1,20 @@
 import React from "react";
-
-class App extends React.Component {
+import Context from "./Context";
+import { graphql } from "@apollo/client/react/hoc";
+import { PRODUCTS } from "../API/queries";
+class ProductsListing extends React.Component {
   render() {
     return (
       <div className="product-listing">
-        <h1>Category name</h1>
+        <h1>{this.props.selectedCategory}</h1>
       </div>
     );
   }
 }
-
-export default App;
+export default graphql(PRODUCTS, {
+  options: (props) => {
+    return {
+      variables: { title: props.selectedCategory },
+    };
+  },
+})(ProductsListing);
