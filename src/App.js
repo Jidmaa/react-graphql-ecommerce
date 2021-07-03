@@ -9,8 +9,7 @@ import Context, { Provider } from "./Components/Context";
 class App extends React.Component {
   static contextType = Context;
   render() {
-    console.log(this.context);
-    if (!this.props.data.loading) {
+    if (!this.props.data.loading && !this.props.data.error) {
       return (
         <div className="main">
           <Header data={this.props.data} />

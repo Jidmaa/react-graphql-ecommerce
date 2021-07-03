@@ -8,8 +8,9 @@ import Context from "./Context";
 class Header extends React.Component {
   static contextType = Context;
   componentDidMount() {
-    const { selectedCategory, setSelectedCategory } = this.context;
+    const { setSelectedCategory, setSelectedCurrency } = this.context;
     setSelectedCategory(this.props.data.category.products[0].category);
+    setSelectedCurrency(this.props.data.currencies[0]);
   }
   constructor(props) {
     super(props);
@@ -18,10 +19,12 @@ class Header extends React.Component {
       currency: "$",
     };
   }
-  handleCurrencyChange = (currency) => () =>
+  handleCurrencyChange = (currency) => () => {
+    this.context.setSelectedCurrency(currency);
     this.setState({
       currency: getCurrencySymbol(currency),
     });
+  };
   handleCurrencyDropdown = () =>
     this.setState((prevState) => ({
       currencies: !prevState.currencies,

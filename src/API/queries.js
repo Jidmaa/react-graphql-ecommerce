@@ -3,5 +3,5 @@ export const CATEGORIES_CURRENCIES = gql(
   `query{category{products{category}} currencies}`
 );
 export const PRODUCTS = gql(
-  `query getProducts($title: String!){category(input: {title: $title}){products{name}}}`
+  `query getProducts($title: String!){category(input: {title: $title}){products{name,inStock, gallery,description, prices{currency, amount}}}}`
 );
