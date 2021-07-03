@@ -36,6 +36,7 @@ code {
 .nav-element:first-child {
   justify-content: unset;
   align-items: center;
+  cursor:pointer
 }
 .nav-element:first-child > span {
   margin-right: 3rem;
@@ -112,10 +113,44 @@ code {
 }
 .product-cards {
   display: grid; 
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, auto));
   gap: 3rem; 
-  justify-items: center;
+  padding: 4rem 0;
+  width: 100%;
+  justify-content: space-between;
 }
 .product-img {
   object-fit: contain;
+}
+.price {
+  font-weight: bold;
+}
+.out-of-stock {
+  opacity: 0.5;
+}
+.out-of-stock-text {
+  position: absolute;
+  bottom: 60%;
+  left: 20%;
+  width: max-content;
+  font-size: 1.5rem;
+  height: 0;
+}
+.product-card {
+  padding: 1rem 1rem;
+  position: relative;
+}
+.product-card:hover {
+  box-shadow: 0px 4px 35px 0px #a8acb030;
+  cursor: pointer;
+}
+.product-card:hover > .add-to-cart{
+  display: block;
+}
+
+.add-to-cart {
+  display: none;
+  position: absolute;
+  top: 72%;
+  right: 10%;
 }
